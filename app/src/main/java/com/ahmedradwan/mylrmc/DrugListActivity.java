@@ -9,17 +9,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-//import org.apache.poi.hssf.usermodel.HSSFCell;
-//import org.apache.poi.hssf.usermodel.HSSFRow;
-//import org.apache.poi.hssf.usermodel.HSSFSheet;
-//import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-//import org.apache.poi.poifs.filesystem.POIFSFileSystem;
-//import org.apache.poi.ss.usermodel.Cell;
-//import org.apache.poi.ss.usermodel.Row;
 
 import com.ahmedradwan.mylrmc.Adapter.DrugListAdapter;
 import com.google.android.gms.common.internal.Constants;
@@ -40,16 +34,23 @@ public class DrugListActivity extends AppCompatActivity {
     private String TAG = "DrugListActivity";
     private List<DrugSample> drugSample = new ArrayList<>();
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drug_list);
 
-//        textView = findViewById(R.id.textview);
         readExcelFileFromAssets();
         ListView listView = (ListView) findViewById(R.id.drugList);
         listView.setAdapter(new DrugListAdapter(this, drugSample));
 
+        Button backBtn = findViewById(R.id.backBtn);
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
 
 
@@ -74,6 +75,7 @@ public class DrugListActivity extends AppCompatActivity {
                 String[] tokens = line.split(",");
                 Log.d("DDDDD","token0:" + tokens.length);
                 DrugSample sample = new DrugSample();
+
                 if(tokens.length >= 5){
                     if(tokens[0].length() > 0){
                         sample.setName(tokens[0]);

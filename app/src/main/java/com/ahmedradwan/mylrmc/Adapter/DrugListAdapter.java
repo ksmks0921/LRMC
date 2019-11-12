@@ -8,17 +8,19 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.ahmedradwan.mylrmc.DrugSample;
 import com.ahmedradwan.mylrmc.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class DrugListAdapter extends BaseAdapter {
 
     private  static LayoutInflater inflater = null;
     Context context;
-    ArrayList<String[]> data;
+    List data;
 
-    public DrugListAdapter(Context context, ArrayList<String[]> data)
+    public DrugListAdapter(Context context, List data)
     {
         this.context = context;
         this.data = data;
@@ -26,7 +28,7 @@ public class DrugListAdapter extends BaseAdapter {
     }
     @Override
     public int getCount() {
-        return 7;
+        return data.size();
     }
 
     @Override
@@ -55,13 +57,13 @@ public class DrugListAdapter extends BaseAdapter {
         TextView pay_2 = (TextView) vi.findViewById(R.id.pay_2);
 
         try{
-            String[] data_per_position = (String[])data.get(position);
+            DrugSample data_per_position = (DrugSample)data.get(position);
 
-            drug_name.setText(data_per_position[0]);
-            quantity_1.setText(data_per_position[1]);
-            pay_1.setText(data_per_position[2]);
-            quantity_2.setText(data_per_position[3]);
-            pay_2.setText(data_per_position[4]);
+            drug_name.setText(data_per_position.getName());
+            quantity_1.setText(data_per_position.getQuantity_1());
+            pay_1.setText(data_per_position.getPay_1());
+            quantity_2.setText(data_per_position.getQuantity_2());
+            pay_2.setText(data_per_position.getPay_2());
         }
         catch (Exception e)
         {
