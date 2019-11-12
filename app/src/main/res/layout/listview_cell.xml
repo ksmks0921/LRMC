@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:weightSum="1"
+    android:layout_height="50dp"
+    android:orientation="horizontal">
+    <TextView
+        android:layout_width="0dp"
+        android:layout_weight="0.3"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:id="@+id/drug_name"
+
+        android:text="Drug Name"/>
+    <TextView
+        android:layout_width="0dp"
+        android:layout_weight="0.1725"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:id="@+id/quantity_1"
+        android:text="For a quantity of up to"/>
+    <TextView
+        android:layout_width="0dp"
+        android:layout_weight="0.1725"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:id="@+id/pay_1"
+        android:text="Pay no more than"/>
+    <TextView
+        android:layout_width="0dp"
+        android:layout_weight="0.1725"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:id="@+id/quantity_2"
+        android:text="For a quantity of up to"/>
+    <TextView
+        android:layout_width="0dp"
+        android:layout_weight="0.1725"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:id="@+id/pay_2"
+        android:text="Pay no more than"/>
+
+
+
+</LinearLayout>

@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 intent = new Intent(getApplicationContext(), MapActivity.class);
                 break;
             case R.id.fluBtn:
-                intent = new Intent(getApplicationContext(), FluActivity.class);
+                intent = new Intent(getApplicationContext(), DrugListActivity.class);
                 break;
             case R.id.listBtn:
                 intent = new Intent(getApplicationContext(), ListActivity.class);
