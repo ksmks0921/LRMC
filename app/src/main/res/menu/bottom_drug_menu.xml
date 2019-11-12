@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/nofree"
+        android:enabled="true"
+        android:title="Discount List"
+        app:showAsAction="ifRoom"
+
+        />
+    <item
+        android:id="@+id/free"
+        android:enabled="true"
+        android:title="Free List"
+        app:showAsAction="ifRoom"/>
+
+</menu>
