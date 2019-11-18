@@ -32,13 +32,60 @@
         app:srcCompat="@drawable/top_logo" />
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="40dp"
         app:layout_constraintTop_toBottomOf="@+id/imageView4"
+
+        android:orientation="horizontal"
+        android:id="@+id/tab_drug"
+        android:weightSum="1"
+        android:background="@drawable/border"
+        >
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="match_parent"
+            android:text="Free Drugs"
+            android:gravity="center"
+            android:background="@color/colorPrimary"
+            android:id="@+id/free_btn"
+            android:clickable="true"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorWhite"
+                android:id="@+id/free_text"
+                android:text="Free Drugs"></TextView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:background="@color/colorWhite"
+            android:clickable="true"
+            android:id="@+id/discount_btn">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:id="@+id/discount_text"
+                android:text="Discount Drugs"></TextView>
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:layout_constraintTop_toBottomOf="@+id/tab_drug"
         android:id="@+id/title"
         android:orientation="horizontal"
         android:weightSum="1"
         android:background="@color/colorPrimary"
-
+        android:visibility="gone"
 
         android:layout_marginTop="8dp">
         <TextView
@@ -88,6 +135,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/list_content"
         android:layout_marginBottom="50dp"
+        android:visibility="gone"
         app:layout_constraintTop_toBottomOf="@+id/title">
         <ListView
             android:id="@+id/drugList"
@@ -100,12 +148,12 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4"
+        app:layout_constraintTop_toBottomOf="@+id/tab_drug"
         android:id="@+id/free_title"
         android:orientation="horizontal"
         android:weightSum="1"
         android:background="@color/colorPrimary"
-        android:visibility="gone"
+
 
         android:layout_marginTop="8dp">
         <TextView
@@ -140,7 +188,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/free_list_content"
         android:layout_marginBottom="50dp"
-        android:visibility="gone"
+
         app:layout_constraintTop_toBottomOf="@+id/free_title">
         <ListView
             android:id="@+id/free_drugList"
@@ -154,50 +202,5 @@
 
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:orientation="horizontal"
-        android:background="@color/colorWhite"
-        android:weightSum="1"
-        >
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_weight="0.5"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:background="@color/colorPrimary"
-            android:clickable="true"
-            android:id="@+id/discount_btn">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/colorWhite"
-                android:id="@+id/discount_text"
-                android:text="Discount Drugs"></TextView>
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_weight="0.5"
-            android:layout_height="match_parent"
-            android:text="Free Drugs"
-            android:gravity="center"
-            android:id="@+id/free_btn"
-            android:clickable="true"
-            android:background="@drawable/border">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/colorPrimary"
-                android:id="@+id/free_text"
-                android:text="Free Drugs"></TextView>
-        </LinearLayout>
-
-    </LinearLayout>
 </android.support.constraint.ConstraintLayout>
